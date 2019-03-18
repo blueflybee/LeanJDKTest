@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /**
  *
@@ -687,7 +689,10 @@ public class SerializableTest implements Serializable{
 
   @Before
   public void setUp() throws Exception {
-
+    CharSequence cs = "ab";
+    IntStream chars = cs.chars();
+    int[] ints = chars.toArray();
+    System.out.println(Arrays.toString(ints));
   }
 
   @After
