@@ -4,12 +4,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
 public class StringTest {
-
 
 
   @Before
@@ -65,5 +67,58 @@ public class StringTest {
 
   }
 
+  @Test
+  public void testCompareTo() {
+    String str1 = "abc";
+    String str2 = "IloveU";
+    System.out.println(str1.compareTo(str2));
+  }
 
+  @Test
+  public void testMatches() {
+    String str1 = "aaaaaaaaab";
+    System.out.println("matches = " + str1.matches("a*b"));
+  }
+
+  @Test
+  public void testReplaceFirst() {
+    String str1 = "aaaaaaaaabcdefhsdger";
+    System.out.println("result = " + str1.replaceFirst("a*b", "哈哈"));
+    System.out.println("result = " + str1.replaceFirst("a*b", Matcher.quoteReplacement("哈哈\\")));
+    System.out.println("result = " + str1.replaceFirst("a*b", Matcher.quoteReplacement("哈哈$")));
+    System.out.println("result = " + str1.replaceFirst("a*b", Matcher.quoteReplacement("哈$$$哈")));
+    System.out.println("result = " + str1.replaceFirst("a*b", Matcher.quoteReplacement("$\\$哈\\\\\\$$$哈\\\\\\")));
+
+  }
+
+  @Test
+  public void testSplit() {
+    String str = "boo:and:foo:my:w:::can::";
+    System.out.println("split 4 = " + Arrays.toString(str.split(":", 4)));
+    System.out.println("split 10 = " + Arrays.toString(str.split(":", 10)));
+    System.out.println("split -2 = " + Arrays.toString(str.split(":", -2)));
+    System.out.println("split 0 = " + Arrays.toString(str.split(":", 0)));
+
+  }
+
+  @Test
+  public void testJoin() {
+    String delimiter = "-";
+    String join = String.join(delimiter, "Java", null, "is", null, "cool");
+    System.out.println("join = " + join);
+
+    List<String> strings = new LinkedList<>();
+    strings.add("Java");
+    strings.add("is");
+    strings.add("cool");
+    String message = String.join(" ", strings);
+    System.out.println("message = " + message);
+
+    HashSet<String> strings1 = new HashSet<>();
+    strings1.add("Java");
+    strings1.add("is");
+    strings1.add("cool");
+    String join1 = String.join("-", strings1);
+    System.out.println("join1 = " + join1);
+  }
 }
