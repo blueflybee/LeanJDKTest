@@ -121,4 +121,23 @@ public class StringTest {
     String join1 = String.join("-", strings1);
     System.out.println("join1 = " + join1);
   }
+
+
+  @Test
+  public void testIntern() {
+
+    String s1 = "HelloWorld";//放入常量池
+    String s2 = new String("HelloWorld");//放入堆
+    String s3 = "Hello";//放入常量池
+    String s4 = "World";//放入常量池
+    String s5 = "Hello" + "World";//拼接后，在常量池寻找HelloWorld返回
+    String s6 = s3 + s4;//放入堆
+
+    System.out.println(s1 == s2);//false
+    System.out.println(s1 == s5);//true
+    System.out.println(s1 == s6);//false
+    System.out.println(s1 == s6.intern());//true
+    System.out.println(s2 == s2.intern());//false
+
+  }
 }
