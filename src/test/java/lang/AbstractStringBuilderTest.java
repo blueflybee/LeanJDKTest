@@ -40,4 +40,21 @@ public class AbstractStringBuilderTest {
     System.out.println("after trimToSize sb.length() = " + sb.length());
   }
 
+  @Test
+  public void testSetLength() {
+
+    StringBuilder sb = new StringBuilder("abcdef");
+    System.out.println("sb = " + sb);
+
+    System.out.println("sb.capacity() = " + sb.capacity());
+    System.out.println("sb.length() = " + sb.length());
+
+    sb.setLength(23);
+    System.out.println("sb = " + sb);
+    System.out.println("sb.capacity() = " + sb.capacity());
+    System.out.println("sb.length() = " + sb.length());
+
+
+  }
+
 }
