@@ -49,11 +49,42 @@ public class AbstractStringBuilderTest {
     System.out.println("sb.capacity() = " + sb.capacity());
     System.out.println("sb.length() = " + sb.length());
 
-    sb.setLength(23);
+    sb.setLength(2);
     System.out.println("sb = " + sb);
     System.out.println("sb.capacity() = " + sb.capacity());
     System.out.println("sb.length() = " + sb.length());
 
+  }
+
+
+  @Test
+  public void testCodePointAt() {
+
+    StringBuilder sb = new StringBuilder("abcd𠮷");
+    System.out.println("sb = " + sb);
+
+    System.out.println("sb.capacity() = " + sb.capacity());
+    System.out.println("sb.length() = " + sb.length());
+
+    char charAt = sb.charAt(4);
+    System.out.println("charAt 4 = " + charAt);
+
+    int codePointAt = sb.codePointAt(4);
+    System.out.println("codePointAt 4 = " + codePointAt);
+
+  }
+
+  @Test
+  public void testCodePointCount() {
+
+    StringBuilder sb = new StringBuilder("abcd𠮷");
+    System.out.println("sb = " + sb);
+
+    System.out.println("sb.capacity() = " + sb.capacity());
+    System.out.println("sb.length() = " + sb.length());
+
+    int codePointCount = sb.codePointCount(0, sb.length());
+    System.out.println("codePointCount = " + codePointCount);
 
   }
 
