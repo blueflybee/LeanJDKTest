@@ -133,4 +133,34 @@ public class AbstractStringBuilderTest {
     System.out.println("sb.length() = " + sb.length());
   }
 
+  //end - start = 5723764
+  //end - start = 3608460
+
+
+  //end - start = 11824302
+  //end - start = 12854869
+  //end - start = 3335615
+  @Test
+  public void testLRMove() {
+
+//    int q = 26;
+//    int ql3 = (q << 3) + (q << 1);
+//    System.out.println("q = " + q);
+//    System.out.println("ql3 = " + ql3);
+    long start = System.nanoTime();
+
+    int a = 100;
+    int b;
+    for (int i = 0; i < 100000000; i++) {
+//      a <<= 1;// 向高位移动一位，相当于乘以 2 的1次方
+//      a >>= 1; // 向低位移动一位，相当于 除以 2的 1次方
+      b = a * 2;
+      b = a / 2;
+    }
+
+    long end = System.nanoTime();
+    System.out.println("end - start = " + (end - start));
+
+  }
+
 }
