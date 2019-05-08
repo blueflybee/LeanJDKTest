@@ -19,9 +19,14 @@ public class FloatTest {
 
   @Test
   public void testFloatToRawIntBits() {
-    int i = Float.floatToRawIntBits(Float.NaN);
+    int i = Float.floatToRawIntBits(20.59375f);
     System.out.println("i = " + i);
     String s = Integer.toHexString(i);
+    System.out.println("s = " + s);
+
+    i = Float.floatToIntBits(20.59375f);
+    System.out.println("i = " + i);
+    s = Integer.toHexString(i);
     System.out.println("s = " + s);
   }
 
