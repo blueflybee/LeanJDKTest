@@ -162,5 +162,20 @@ public class AbstractStringBuilderTest {
     System.out.println("end - start = " + (end - start));
 
   }
+  @Test
+  public void testDeleteCharAt() {
+    StringBuilder sb = new StringBuilder("𠮷");
+    System.out.println("sb = " + sb);
+    System.out.println("sb.capacity() = " + sb.capacity());
+    System.out.println("sb.length() = " + sb.length());
+
+    sb = sb.deleteCharAt(0);
+
+    System.out.println("sb = " + sb);
+    System.out.println("sb.capacity() = " + sb.capacity());
+    System.out.println("sb.length() = " + sb.length());
+
+  }
+
 
 }
