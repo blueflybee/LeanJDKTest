@@ -21,4 +21,17 @@ public class IntegerTest {
     System.out.println("zeros = " + zeros);
   }
 
+
+  @Test
+  public void testSignum() {
+    // returns 1 as int value is greater than 0
+    System.out.println(Integer.signum(50));
+
+    // returns -1 as int value is less than 0
+    System.out.println(Integer.signum(-50));
+
+    // returns 0 as int value is equal to 0
+    System.out.println(Integer.signum(0));
+  }
+
 }
