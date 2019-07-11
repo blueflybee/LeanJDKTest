@@ -34,4 +34,18 @@ public class IntegerTest {
     System.out.println(Integer.signum(0));
   }
 
+  @Test
+  public void testRotateRight() {
+    System.out.println(Integer.rotateRight(12, 2));
+  }
+
+  @Test
+  public void testRotateLeft() {
+    System.out.println(Integer.rotateLeft(3, 2));
+  }
+
+  @Test
+  public void testBitCount() {
+    System.out.println(Integer.bitCount(13));
+  }
 }
