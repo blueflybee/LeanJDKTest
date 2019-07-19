@@ -48,4 +48,20 @@ public class IntegerTest {
   public void testBitCount() {
     System.out.println(Integer.bitCount(13));
   }
+
+  @Test
+  public void testToUnsignedString() {
+    System.out.println(Integer.toString(-2019));
+    System.out.println(Integer.toUnsignedString(-0, 2));
+  }
+
+  @Test
+  public void testToUnsignedLong() {
+    System.out.println(Integer.toUnsignedLong(-1));
+  }
+
+  @Test
+  public void testToHexString() {
+    System.out.println(Integer.toHexString(-2));
+  }
 }
